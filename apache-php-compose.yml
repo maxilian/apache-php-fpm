@@ -1,0 +1,22 @@
+# author: maxilian
+# git profile: https://github.com/maxilian
+
+version: "4"
+services:
+  php-fpm:
+    image: php:8.1-fpm-alpine
+    container_name: php-fpm1
+    ports:
+      - 9000
+    volumes:
+      - ./www:/var/www
+      - ./config/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./config/php.ini:/usr/local/etc/php/php.ini
+  httpd:
+    image: httpd:alpine
+    container_name: apache
+    ports:
+      - 8083:80
+    volumes:
+      - ./www:/var/www
+      - ./config/httpd.conf:/usr/local/apache2/conf/httpd.conf
