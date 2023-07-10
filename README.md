@@ -5,7 +5,7 @@ Apache HTTPD and php-fpm container stack using docker-compose
 Simply use docker-compose command to create this docker container stack.
 
 ```
-docker-compose -f nginx-compose.yml up -d
+docker-compose -f apache-php-compose.yml up -d
 ```
 
 * It will exposing port `8083` from your host to port `80` inside nginx container. 
